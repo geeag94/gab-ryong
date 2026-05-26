@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" fill="none">
+  <rect width="192" height="192" rx="24" fill="#111827"/>
+  <rect x="16" y="16" width="160" height="160" rx="20" fill="#1f2937" stroke="#4ade80" stroke-width="4"/>
+  
+  <!-- 다마고치 알 모양 -->
+  <ellipse cx="96" cy="90" rx="50" ry="60" fill="#4ade80"/>
+  <ellipse cx="96" cy="90" rx="50" ry="60" stroke="#22c55e" stroke-width="3"/>
+  
+  <!-- 눈 -->
+  <circle cx="78" cy="75" r="8" fill="#111827"/>
+  <circle cx="114" cy="75" r="8" fill="#111827"/>
+  
+  <!-- 반짝임 -->
+  <circle cx="60" cy="55" r="6" fill="#86efac"/>
+  <circle cx="132" cy="55" r="4" fill="#86efac"/>
+  
+  <!-- LCD 화면 표시 -->
+  <rect x="56" y="110" width="80" height="8" rx="4" fill="#111827" opacity="0.3"/>
+</svg>

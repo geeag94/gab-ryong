@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/gab-ryong/sw.js', { scope: '/gab-ryong/' })})}
