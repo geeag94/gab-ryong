@@ -78,15 +78,18 @@ function App() {
   };
 
   const renderGauge = (label, value) => {
-    const filled = Math.round(value / 10);
-    const bar = '█'.repeat(filled) + '░'.repeat(10 - filled);
+    // 모바일에서는 5칸 게이지, 데스크톱에서는 10칸
+    const isMobile = window.innerWidth < 640;
+    const segments = isMobile ? 5 : 10;
+    const filled = Math.round((value / 100) * segments);
+    const bar = '█'.repeat(filled) + '░'.repeat(segments - filled);
     const warning = value <= 30 && value > 0;
     return (
-      <div className={`flex items-center gap-2 text-base ${warning ? 'animate-pulse text-red-400' : 'text-green-300'}`} style={{ fontFamily: "'Fredoka', 'Jua', sans-serif" }}>
-        <span className="w-24 font-bold shrink-0">{label}:</span>
-        <span className="tracking-widest whitespace-nowrap">{bar}</span>
-        <span className="text-sm opacity-80 whitespace-nowrap">[{value}/100]</span>
-        {warning && <span className="text-lg">!</span>}
+      <div className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-base ${warning ? 'animate-pulse text-red-400' : 'text-green-300'}`} style={{ fontFamily: "'Fredoka', 'Jua', sans-serif" }}>
+        <span className="font-bold shrink-0" style={{ minWidth: '4.5rem' }}>{label}:</span>
+        <span className="tracking-widest whitespace-nowrap text-sm sm:text-base">{bar}</span>
+        <span className="text-xs sm:text-sm opacity-80 whitespace-nowrap">[{value}/100]</span>
+        {warning && <span className="text-base sm:text-lg">!</span>}
       </div>
     );
   };
@@ -115,7 +118,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-      <div className="flex flex-col items-center max-w-md w-full">
+      <div className="flex flex-col items-center w-full max-w-md px-2 sm:px-4">
         {/* 게임 타이틀 */}
         <h1 className="text-3xl font-bold text-green-400 tracking-wider mb-2 drop-shadow-[0_0_10px_rgba(74,222,128,0.6)]" style={{ fontFamily: "'Fredoka', 'Jua', sans-serif" }}>
           갑룡이
@@ -125,11 +128,11 @@ function App() {
         </h2>
 
         {/* 기기 프레임 */}
-        <div className="relative bg-gray-800/60 border-4 border-green-400/60 rounded-[3rem] p-6 shadow-[0_0_40px_rgba(74,222,128,0.25)] backdrop-blur-sm w-full">
+        <div className="relative bg-gray-800/60 border-4 border-green-400/60 rounded-[2rem] sm:rounded-[3rem] p-4 sm:p-6 shadow-[0_0_40px_rgba(74,222,128,0.25)] backdrop-blur-sm w-full">
         
         {/* LCD 액정 */}
         <div 
-          className={`relative bg-green-950/40 border-2 border-green-500/40 rounded-2xl p-5 min-h-[380px] flex flex-col justify-between overflow-hidden ${isEvolving ? 'animate-flash' : ''} ${state.isDimmed ? 'opacity-40' : 'opacity-100'} transition-opacity duration-500`}
+          className={`relative bg-green-950/40 border-2 border-green-500/40 rounded-2xl p-3 sm:p-5 min-h-[320px] sm:min-h-[380px] flex flex-col justify-between overflow-hidden ${isEvolving ? 'animate-flash' : ''} ${state.isDimmed ? 'opacity-40' : 'opacity-100'} transition-opacity duration-500`}
           onClick={enableAudio}
         >
           
