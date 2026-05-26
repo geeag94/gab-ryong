@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="48" fill="#111827"/>
+  <rect x="32" y="32" width="448" height="448" rx="40" fill="#1f2937" stroke="#4ade80" stroke-width="8"/>
+  
+  <!-- 다마고치 알 모양 -->
+  <ellipse cx="256" cy="240" rx="140" ry="170" fill="#4ade80"/>
+  <ellipse cx="256" cy="240" rx="140" ry="170" stroke="#22c55e" stroke-width="6"/>
+  
+  <!-- 눈 -->
+  <circle cx="210" cy="200" r="24" fill="#111827"/>
+  <circle cx="302" cy="200" r="24" fill="#111827"/>
+  
+  <!-- 반짝임 -->
+  <circle cx="160" cy="140" r="18" fill="#86efac"/>
+  <circle cx="352" cy="140" r="12" fill="#86efac"/>
+  
+  <!-- LCD 화면 표시 -->
+  <rect x="150" y="300" width="212" height="24" rx="12" fill="#111827" opacity="0.3"/>
+  
+  <!-- 버튼 표시 -->
+  <circle cx="256" cy="420" r="30" fill="#4ade80" opacity="0.5"/>
+</svg>
